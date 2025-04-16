@@ -1,17 +1,17 @@
-// Kelas Mahasiswa untuk menangani login dan menampilkan informasi Mahasiswa
+
 class Mahasiswa extends User {
 
-    // Konstruktor Mahasiswa untuk menginisialisasi nama dan NIM
+
     public Mahasiswa(String nama, String nim) {
-        // Memanggil konstruktor superclass (User)
+
         super(nama, nim);
     }
 
-    // Metode login untuk memverifikasi nama dan NIM Mahasiswa
+
     @Override
     public void login() {
-        // Memeriksa apakah nama dan NIM sesuai dengan data yang telah ditentukan
-        if (getNama().equalsIgnoreCase("iqodhul himam") && getNim().equals("202410370110179")) { // Menggunakan equalsIgnoreCase() agar perbandingan nama tidak case-sensitive
+
+        if (getNama().equalsIgnoreCase("iqodhul himam") && getNim().equals("202410370110179")) {
             System.out.println("Login Mahasiswa berhasil!"); // Pesan sukses jika login berhasil
             System.out.println(); // Baris kosong untuk tampilan lebih rapi
             displayInfo(); // Menampilkan informasi mahasiswa setelah login sukses
