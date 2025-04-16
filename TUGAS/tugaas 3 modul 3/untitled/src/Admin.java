@@ -1,28 +1,35 @@
-public class Admin extends User{
-    String username;
-    String Password;
+// Kelas Admin untuk menangani login sebagai Admin
+class Admin extends User {
+    private String password; // Variabel untuk menyimpan password Admin (bersifat private untuk keamanan)
+    private String username; // Variabel untuk menyimpan username Admin (bersifat private untuk keamanan)
 
-    public Admin(String nama, String nim, String username, String password) {
-        super(nama, nim);
+    // Konstruktor Admin yang menerima username dan password dari pengguna
+    public Admin(String username, String password) {
+        // Memanggil konstruktor superclass (User) dengan nama dan NIM tetap
+        super("iqodhul himam", "202410370110179");
         this.username = username;
-        Password = password;
+        this.password = password;
     }
+
+    // Metode login untuk memverifikasi username dan password Admin
     @Override
-    void Login() { //method untuk menyimpan info login user
-        if (username.equals("Admin208") && Password.equals("Password208")) { //data login user untuk mengecek benar dan salahnya login admin
-            System.out.println("Login Admin berhasil !"); //output jika login admin benar
-            DisplayInfo();
+    public void login() {
+        // Memeriksa apakah username dan password sesuai dengan data yang telah ditentukan
+        if (username.equals("Admin179") && password.equals("password179")) {
+            System.out.println("Login Admin berhasil!"); // Pesan sukses untuk Admin
+            System.out.println(); // Baris kosong untuk tampilan lebih rapi
+            displayInfo(); // Menampilkan informasi Admin setelah login berhasil
         } else {
-            System.out.println("Login Gagal ! Username atau Password salah.");//output jika login admin salah
+            System.out.println("Login gagal! Username atau password salah."); // Pesan gagal jika login tidak berhasil
         }
     }
 
+    // Metode untuk menampilkan informasi Admin setelah login berhasil
     @Override
-    void DisplayInfo(){
-        System.out.println("Data Login Admin : ");
-        System.out.println("Nama : " + getNama());
-        System.out.println("Nim : " + getNim());
-        System.out.println("Username : " +username);
-
+    public void displayInfo() {
+        System.out.println("Informasi Admin:");
+        System.out.println("Nama: " + getNama()); // Menampilkan nama Admin yang diatur dalam superclass
+        System.out.println("NIM: " + getNim()); // Menampilkan NIM Admin yang diatur dalam superclass
+        System.out.println("Username: " + username); // Menampilkan username yang digunakan untuk login
     }
 }
