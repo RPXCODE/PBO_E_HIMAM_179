@@ -15,7 +15,7 @@ class Admin extends User {
     @Override
     public void login() {
         // Memeriksa apakah username dan password sesuai dengan data yang telah ditentukan
-        if (username.equals("Admin179") && password.equals("password179")) {
+        if (username.equals("admin179") && password.equals("password179")) {
             System.out.println("Login Admin berhasil!"); // Pesan sukses untuk Admin
             System.out.println(); // Baris kosong untuk tampilan lebih rapi
             displayInfo(); // Menampilkan informasi Admin setelah login berhasil
