@@ -5,9 +5,7 @@ public class LoginSystem {
     public static void main(String[] args) {
         int pilihan;
 
-
         Scanner objInput = new Scanner(System.in);
-
 
         System.out.println("Pilih login:");
         System.out.println("1. Admin");
