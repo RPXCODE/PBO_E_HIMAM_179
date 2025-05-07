@@ -1,3 +1,5 @@
+package app;
+
 import perpustakaan.*;
 import java.util.*;
 
@@ -7,8 +9,8 @@ public class Main {
         List<Buku> daftarBuku = new ArrayList<>();
         List<Anggota> daftarAnggota = new ArrayList<>();
 
-        daftarAnggota.add(new Anggota("iqodhul himam", "202410370110179"));
-        daftarAnggota.add(new Anggota("Dicky Habib", "202410370110208"));
+        daftarAnggota.add(new Anggota("iqodhul himam", "179"));
+        daftarAnggota.add(new Anggota("Dicky Habib", "208"));
 
         Anggota anggotaAktif = null;
         while (anggotaAktif == null) {
@@ -21,10 +23,10 @@ public class Main {
                 }
             }
             if (anggotaAktif == null) {
-                System.out.println("❌ ID tidak ditemukan. Silakan coba lagi.\n");
+                System.out.println(" ID tidak ditemukan. Silakan coba lagi.\n");
             }
         }
-        System.out.println("✅ Login berhasil! Selamat datang, " + anggotaAktif.getNama());
+        System.out.println(" Login berhasil! Selamat datang, " + anggotaAktif.getNama());
 
         while (true) {
             System.out.println("\n===== Menu Utama =====");
@@ -54,21 +56,21 @@ public class Main {
                         } else if (jenis.equals("2")) {
                             buku = new Nonfiksi(id, judul, penulis);
                         } else {
-                            System.out.println("❌ Jenis buku tidak valid. Kembali ke menu.");
+                            System.out.println(" Jenis buku tidak valid. Kembali ke menu.");
                             break;
                         }
                         daftarBuku.add(buku);
-                        System.out.println("✅ Buku berhasil ditambahkan!");
+                        System.out.println(" Buku berhasil ditambahkan!");
                     } catch (NumberFormatException e) {
-                        System.out.println("❌ Input angka tidak valid.");
+                        System.out.println(" Input angka tidak valid.");
                     }
                     break;
 
                 case "2":
                     if (daftarBuku.isEmpty()) {
-                        System.out.println("📭 Tidak ada buku di perpustakaan.");
+                        System.out.println(" Tidak ada buku di perpustakaan.");
                     } else {
-                        System.out.println("\n📚 Daftar Buku:");
+                        System.out.println("\n Daftar Buku:");
                         for (Buku b : daftarBuku) {
                             b.displayInfo();
                         }
@@ -77,10 +79,10 @@ public class Main {
 
                 case "3":
                     if (daftarBuku.isEmpty()) {
-                        System.out.println("📭 Tidak ada buku untuk dipinjam.");
+                        System.out.println(" Tidak ada buku untuk dipinjam.");
                         break;
                     }
-                    System.out.println("\n📚 Daftar Buku Tersedia:");
+                    System.out.println("\n Daftar Buku Tersedia:");
                     for (Buku b : daftarBuku) {
                         b.displayInfo();
                     }
@@ -96,10 +98,10 @@ public class Main {
                         if (bukuPinjam.isPresent()) {
                             anggotaAktif.pinjamBuku(bukuPinjam.get(), durasi);
                         } else {
-                            System.out.println("❌ Buku tidak ditemukan.");
+                            System.out.println(" Buku tidak ditemukan.");
                         }
                     } catch (NumberFormatException e) {
-                        System.out.println("❌ Input harus berupa angka.");
+                        System.out.println(" Input harus berupa angka.");
                     }
                     break;
 
@@ -113,19 +115,19 @@ public class Main {
                         if (bukuKembali.isPresent()) {
                             anggotaAktif.kembalikanBuku(bukuKembali.get());
                         } else {
-                            System.out.println("❌ Buku tidak ditemukan.");
+                            System.out.println(" Buku tidak ditemukan.");
                         }
                     } catch (NumberFormatException e) {
-                        System.out.println("❌ Masukkan ID angka yang valid.");
+                        System.out.println(" Masukkan ID angka yang valid.");
                     }
                     break;
 
                 case "5":
-                    System.out.println("👋 Terima kasih telah menggunakan sistem. Sampai jumpa!");
+                    System.out.println(" Terima kasih telah menggunakan sistem. Sampai jumpa!");
                     return;
 
                 default:
-                    System.out.println("❌ Pilihan tidak valid. Silakan coba lagi.");
+                    System.out.println(" Pilihan tidak valid. Silakan coba lagi.");
             }
         }
     }

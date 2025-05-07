@@ -7,6 +7,6 @@ public class Fiksi extends Buku {
 
     @Override
     public void displayInfo() {
-        System.out.println("\uD83D\uDCD5 [Fiksi] ID: " + id + " | " + judul + " oleh " + penulis);
+        System.out.println(" [Fiksi] ID: " + id + " | " + judul + " oleh " + penulis);
     }
 }

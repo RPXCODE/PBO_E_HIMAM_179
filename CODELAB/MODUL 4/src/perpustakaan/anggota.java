@@ -23,16 +23,16 @@ public class Anggota implements Peminjaman {
 
     @Override
     public void pinjamBuku(Buku buku) {
-        System.out.println("\uD83D\uDCDA " + nama + " (" + idAnggota + ") meminjam buku: " + buku.getJudul());
+        System.out.println(nama + " (" + idAnggota + ") meminjam buku: " + buku.getJudul());
     }
 
     public void pinjamBuku(Buku buku, int durasi) {
-        System.out.println("\uD83D\uDCDA " + nama + " (" + idAnggota + ") berhasil meminjam buku: \"" + buku.getJudul() + "\" selama " + durasi + " hari.");
-        System.out.println("\uD83D\uDCC5 Pengembalian paling lambat dalam " + durasi + " hari.");
+        System.out.println(nama + " (" + idAnggota + ") berhasil meminjam buku: \"" + buku.getJudul() + "\" selama " + durasi + " hari.");
+        System.out.println("Pengembalian paling lambat dalam " + durasi + " hari.");
     }
 
     @Override
     public void kembalikanBuku(Buku buku) {
-        System.out.println("\u2705 " + nama + " (" + idAnggota + ") telah mengembalikan buku: \"" + buku.getJudul() + "\" (ID: " + buku.getId() + ")");
+        System.out.println(nama + " (" + idAnggota + ") telah mengembalikan buku: \"" + buku.getJudul() + "\" (ID: " + buku.getId() + ")");
     }
 }

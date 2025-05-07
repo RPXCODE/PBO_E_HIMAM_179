@@ -7,6 +7,6 @@ public class Nonfiksi extends Buku {
 
     @Override
     public void displayInfo() {
-        System.out.println("\uD83D\uDCD7 [Non-Fiksi] ID: " + id + " | " + judul + " oleh " + penulis);
+        System.out.println("[Non-Fiksi] ID: " + id + " | " + judul + " oleh " + penulis);
     }
 }
